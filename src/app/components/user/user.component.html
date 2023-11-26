@@ -1,0 +1,11 @@
+<div class="flex bg-stone-950 h-auto rounded-3xl gap-10 p-5 pl-20 w-screen items-center justify-center" *ngIf="userData.login">
+    <span class="flex items-center justify-center w-60 h-60 rounded-full" *ngIf="userData.avatar_url" >
+        <img src="{{userData.avatar_url}}" alt="no_img" class="object-cover w-full h-full rounded-full"/>
+    </span>
+    <div class="flex flex-col gap-2 ">
+        <span class="text-5xl">{{userData.login}}</span>
+        <span class=" text-ellipsis ">{{userData.bio}}</span>  
+        <span *ngIf="userData.location" class="flex items-center"><mat-icon class="text-sm">location_on</mat-icon>{{userData.location}}</span>
+        <span *ngIf="userData.email" class="flex items-center"><mat-icon> email</mat-icon>{{userData.email}}</span>
+    </div>
+</div>

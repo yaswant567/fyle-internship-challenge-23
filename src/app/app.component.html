@@ -1,5 +1,11 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<div class="flex-col w-screen h-screen justify-center font-medium overflow-x-hidden">
+  <div class="flex-row w-full h-auto justify-center items-center bg-stone-950 p-5">
+    <app-header (newItemEvent)="getUserInput($event)"></app-header>
+  </div>
+  <div *ngIf="!errorMessage" class=" flex text-red-700 w-full items-center justify-center h-auto">
+     User Not Found!
+  </div>
+  <div class="max-w-full w-full h-full">
+    <app-user-profile [getUserData]="userData"></app-user-profile>
   </div>
 </div>

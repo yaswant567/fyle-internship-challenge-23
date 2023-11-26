@@ -1,0 +1,27 @@
+<div class="flex flex-col text-stone-50 text-base font-medium min-h-full h-auto w-full items-center mt-2.5">
+    <div class="flex w-screen">
+        <app-user [userData] = "getUserData"></app-user>
+    </div>
+    <div class="flex flex-row justify-center w-4/5 mb-10">
+        <div class="w-full"><app-repos [userName] = "getUserData.login" [perPage]="perPage"  [pageNo]="getPageNo"></app-repos></div>
+    </div>
+    <div class="flex absolute w-full p-4 pl-10 bottom-0 justify-between bg-stone-950 mr-5">
+      <span class="flex items-center w-20 p-2 rounded bg-slate-100">
+        <input type="number" (input)="handlePerPage($event)" class="w-full h-full bg-transparent border-none text-black focus:outline-none" value="10">
+      </span>      
+      <ul class="list-style-none flex">
+        <li (click)="handlePageNo(getPageNo - 1)">
+          <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white cursor-pointer">Previous</a>
+        </li>
+        <ul class="flex">
+          <li *ngFor="let page of getPageRange(totalPages)">
+            <span class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100  dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white cursor-pointer" (click)="handlePageNo(page)">{{ page }}</span>
+          </li>
+        </ul>
+        <li (click)="handlePageNo(getPageNo + 1)">
+          <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white" href="#!">Next</a>
+        </li>
+      </ul>
+      
+    </div>
+</div>
