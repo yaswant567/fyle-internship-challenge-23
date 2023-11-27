@@ -1,4 +1,10 @@
 # Fyle Frontend Challenge
+Link: https://fyle-internship-challenge-23-six.vercel.app/#!
+
+Project setup:
+1. npm install -g @angular/cli
+2. ng add @angular/material
+3. Angular 16+
 
 ## Who is this for?
 
