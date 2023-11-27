@@ -10,7 +10,7 @@ export class UserComponent{
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['userData']) {
-       console.log(this.userData.type)
+      //  console.log(this.userData.type)
     }
   }
   
